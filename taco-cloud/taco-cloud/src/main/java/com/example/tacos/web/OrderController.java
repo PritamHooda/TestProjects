@@ -11,7 +11,7 @@ import org.springframework.web.bind.support.SessionStatus;
 
 @Slf4j
 @Controller
-@RequestMapping("/order")
+@RequestMapping("/orders")
 @SessionAttributes("tacoOrder")
 public class OrderController {
 
