@@ -11,6 +11,10 @@
             <div class="grid">
 
                 <div class="ingredient-group" id="wraps">
+
+                    <span class="validationError"
+                          th:if="${#fields.hasErrors('ingredients')}" th:errors="*{ingredients}">Ingredients error</span>
+
                     <h3>What's your wrap?</h3>
                     <div th:each="ingredient : ${wrap}">
                         <input th:field="*{ingredients}" type="checkbox" th:value="${ingredient.id}" />
@@ -50,6 +54,7 @@
             <div>
                 <h3>Name your Taco:</h3>
                 <input type="text" th:field="*{name}" />
+                <span class="validationError" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Taco Name error</span>
                 <br />
                 <button>Submit</button>
             </div>
