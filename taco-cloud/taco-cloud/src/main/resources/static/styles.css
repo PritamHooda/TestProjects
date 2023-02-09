@@ -1,0 +1,17 @@
+body {
+    background-color: lightgray;
+}
+
+.grid {
+    display: inline-grid;
+    grid-template-columns: auto auto auto;
+    padding: 10px
+}
+
+.ingredient-group {
+    padding: 20px
+}
+
+.validationError {
+    color: red;
+}

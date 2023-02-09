@@ -6,21 +6,23 @@
     </head>
     <body>
         <h1>Design your Taco!</h1>
-        <img th:src="@{/images/Taco-cloud.jpg}" />
+        <img th:src="@{/images/Taco-cloud.png}" />
         <form method="post" th:object="${taco}">
+
+            <span class="validationError"
+                  th:if="${#fields.hasErrors('ingredients')}" th:errors="*{ingredients}">Ingredients error</span>
+            <br />
+
             <div class="grid">
 
                 <div class="ingredient-group" id="wraps">
-
-                    <span class="validationError"
-                          th:if="${#fields.hasErrors('ingredients')}" th:errors="*{ingredients}">Ingredients error</span>
-
                     <h3>What's your wrap?</h3>
                     <div th:each="ingredient : ${wrap}">
                         <input th:field="*{ingredients}" type="checkbox" th:value="${ingredient.id}" />
                         <span th:text="${ingredient.name}">INGREDIENT-WRAP</span><br/>
                     </div>
                 </div>
+
                 <div class="ingredient-group" id="proteins">
                     <h3>Pick your Protein</h3>
                     <div th:each="ingredient : ${protein}">
@@ -28,6 +30,7 @@
                         <span th:text="${ingredient.name}">INGREDIENT-PROTEIN</span><br/>
                     </div>
                 </div>
+
                 <div class="ingredient-group" id="cheese">
                     <h3>Choose your Cheese</h3>
                     <div th:each="ingredient : ${cheese}">
@@ -35,6 +38,7 @@
                         <span th:text="${ingredient.name}">INGREDIENT-CHEESE</span><br/>
                     </div>
                 </div>
+
                 <div class="ingredient-group" id="veggies">
                     <h3>Verify your Veggies</h3>
                     <div th:each="ingredient : ${veggies}">
@@ -42,6 +46,7 @@
                         <span th:text="${ingredient.name}">INGREDIENT-VEGGIES</span><br/>
                     </div>
                 </div>
+
                 <div class="ingredient-group" id="sauces">
                     <h3>Select your Sauces</h3>
                     <div th:each="ingredient : ${sauce}">
