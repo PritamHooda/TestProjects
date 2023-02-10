@@ -1,6 +1,5 @@
 package com.example.tacos;
 
-import com.example.tacos.web.HomeController;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
@@ -12,7 +11,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
 
-@WebMvcTest(HomeController.class)
+@WebMvcTest()
 public class HomeControllerTest {
     @Autowired
     private MockMvc mockMvc;
