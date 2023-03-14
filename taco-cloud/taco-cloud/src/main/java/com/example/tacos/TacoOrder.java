@@ -25,7 +25,7 @@ public class TacoOrder implements Serializable {
     private String deliveryCity;
     @NotBlank(message = "Delivery province is required")
     private String deliveryProvince;
-    @Pattern(regexp = "/^[A-Za-z]\\d[A-Za-z][ -]?\\d[A-Za-z]\\d$/", message = "Postal code is required and formatted correctly.")
+    @Pattern(regexp = "^([A-Z]|[a-z])[0-9]([A-Z]|[a-z])[ -]?[0-9]([A-Z]|[a-z])[0-9]$", message = "Postal code is required and formatted correctly.")
     private String deliveryPostalCode;
     @CreditCardNumber(message = "Must be a valid credit card number")
     private String ccNumber;
